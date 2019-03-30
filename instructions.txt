@@ -1,0 +1,23 @@
+
+We have a PHP file that returns a JSON array. 
+I'd like you to use HTML, CSS and Javascript to read the JSON data and display it in an organized manner. 
+In addition, I'd like to see a sorting mechanic on the front-end. 
+Feel free to use any frameworks you would like to achieve the task.
+
+QUESTIONS
+
+Is there any data that should not be displayed?
+It’s totally up to you! Feel free to take a look at some wine sites for examples of what might be good to display.
+
+What is the most important data to display?
+I would say vintage, varietal, appellation and price.
+
+What does the key "active" mean?
+In our system 0 means inactive, 1 means active (live on the site).
+
+Do you have a preference for how to sort? I was thinking by varietal and then by price.
+Varietal then price sounds perfect.
+
+Any preferences for how to visually organize or group the products?
+No preference. Feel free to get creative with it, or you can check out one of our existing sites and snag the display.
+
