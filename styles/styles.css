@@ -1,19 +1,29 @@
-/* global styles and custom properties */
+/* GLOBAL SYTLES AND CUSTOM PROPERTIES */
 
-/* color & font variables */
+/* color & font properties */
 :root {
   --primary-light-color: #fff5d3; /* yellow-wheat */
   --primary-dark-color: #19160a; /* coal */
   --secondary-color: #b69e49; /* gold */
   --accent-light-color: #822783; /* light-purple */
-  --accent-dark-color: #692569; /* dark-purple */
-
+  /* --accent-dark-color: #692569; dark-purple */
   --primary-font-family: "Open Sans", sans-serif;
 }
 
 /* grid - global */
 .col-12 {
   width: 100%;
+}
+
+/* background colors */
+body {
+  background-color: var(--primary-light-color);
+}
+
+header {
+  align-items: flex-end;
+  background-color: var(--primary-dark-color);
+  display: flex;
 }
 
 /* text styles */
@@ -24,45 +34,176 @@ p {
   font-family: var(--primary-font-family);
 }
 
+h1 {
+  color: var(--secondary-color);
+  font-weight: 100;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 100;
+  margin: 2% 0 8%;
+}
+
+p {
+  font-weight: 100;
+}
+
+p.price {
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-bottom: 8%;
+}
+
+/* open, close icons */
+.fa-chevron-up,
+.fa-chevron-down {
+  color: var(--accent-light-color);
+  font-size: 2em;
+  /* margin-bottom: 8%; */
+}
+
+/* ---------- */
 /* ---------- */
 
-/* medium screen styles */
+/* MEDIUM SCREEN STYLES */
 
 /* grid - laptop/desktop */
 .md-col-4 {
-  width: 32%;
+  width: 33%;
 }
+
 .md-col-12 {
   width: 100%;
 }
 
 /* header - md */
+header {
+  height: 175px;
+}
+
+h1 {
+  font-size: 6em;
+  line-height: 0.8;
+}
 
 /* main - md */
+.wines-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  margin: 5% 2%;
+}
 
 /* product container - md */
+.product-info-container {
+  margin: 15% 2%;
+}
+
+.product-info-container {
+  text-align: center;
+}
+
 img {
-  height: 300px;
+  height: 250px;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+/* vertical line separating products */
+.vertical-line {
+  align-self: center;
+  border: 0.5px solid var(--secondary-color);
+}
+
+.vertical-line.closed {
+  height: 400px;
+}
+
+.vertical-line .open {
+  height: 470px;
+}
+
+/* hide every third vertical line*/
+.vertical-line:nth-of-type(3n) {
+  display: none;
 }
 
 /* ---------- */
+/* ---------- */
 
-/* small screen styles - tablet */
-/* @media screen and (max-width: 600px){} */
-/* grid - sm */
-.sm-col-6 {
-  width: 49%;
-}
+/* SMALL SCREEN STYLES - tablet */
+@media screen and (max-width: 920px) {
+  header {
+    height: 150px;
+  }
 
-.sm-col-12 {
-  width: 100%;
+  h1 {
+    font-size: 5em;
+    line-height: 0.8;
+  }
+
+  /* grid - sm */
+  .sm-col-6 {
+    width: 49%;
+  }
+
+  /* hide every other vertical line*/
+  .vertical-line:nth-of-type(even) {
+    display: none;
+  }
+
+  /* .sm-col-12 {
+    width: 99%;
+  } */
 }
 
 /* ---------- */
+/* ---------- */
 
-/* extra small screen styles - phone */
-/* @media screen and (max-width: 400px) {} */
-/* grid - xs */
-.xs-col-12 {
-  width: 100%;
+/* EXTRA SMALL SCREEN STYLES - phone */
+@media screen and (max-width: 630px) {
+  header {
+    height: 125px;
+  }
+
+  h1 {
+    font-size: 4em;
+    line-height: 0.8;
+  }
+
+  /* grid - xs */
+  .xs-col-12 {
+    width: 99%;
+  }
+
+  .product-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .vertical-line {
+    border: 0.5px solid var(--secondary-color);
+    height: 0;
+    margin: 0 auto;
+    width: 85%;
+  }
+
+  .vertical-line.closed {
+    height: 0;
+  }
+
+  .vertical-line:nth-of-type(even) {
+    display: block;
+  }
+}
+
+.more-info-container {
+  display: none;
 }

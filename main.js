@@ -54,18 +54,25 @@ function compare(a, b) {
 // Display wines on home page (index.html) //
 function addWine(wine) {
   const parent = document.querySelector(".wines-container");
-  wine.forEach(item => {
-    //// create elements
-    ////// product section and h2
-    const newSection = document.createElement("section");
-    const newEVar = document.createElement("h2");
-    const newVar = document.createTextNode(item.varietal);
 
-    ////// paragraphs
-    const newEVintageApp = document.createElement("p");
+  wine.forEach(item => {
+    //// create elements and text nodes
+    ////// divs and sections
+    const newSProductContainer = document.createElement("section");
+    const newSProductInfo = document.createElement("section");
+    const newDivMoreInfo = document.createElement("div");
+    const newDivSizeAbv = document.createElement("div");
+    const newDivLine = document.createElement("div");
+
+    ////// headings
+    const newEVar = document.createElement("h2");
+    const newVar = document.createTextNode(item.varietal.toUpperCase());
+    const newEVintageApp = document.createElement("h3");
     const newVintageApp = document.createTextNode(
       `${item.vintage} ${item.appellation}`
     );
+
+    ////// paragraphs
     const newEPrice = document.createElement("p");
     const newPrice = document.createTextNode(`$${item.base_price}`);
     const newEProductId = document.createElement("p");
@@ -80,6 +87,12 @@ function addWine(wine) {
     ////// bottle image elements
     const newImgBottle = document.createElement("img");
 
+    ////// font awesome icon elements with class
+    const newIconOpen = document.createElement("i");
+    newIconOpen.classList = "fas fa-chevron-down";
+    const newIconClose = document.createElement("i");
+    newIconClose.classList = "fas fa-chevron-up";
+
     //// add text to new elements
     newEVar.appendChild(newVar);
     newEVintageApp.appendChild(newVintageApp);
@@ -92,30 +105,44 @@ function addWine(wine) {
     newImgBottle.src = item.bottle_shot;
     newImgBottle.alt = `bottle of ${item.vintage} ${item.varietal}`;
 
-    //// append new elements to the new section
-    newSection.append(
+    //// add class to elements
+    newSProductContainer.classList =
+      "product-container md-col-4 sm-col-6 xs-col-12";
+    newSProductInfo.className = "product-info-container";
+    newDivMoreInfo.className = "more-info-container";
+    newDivSizeAbv.className = "size-abv-container";
+    newEVar.className = "varietal";
+    newEVintageApp.className = "vintage-app";
+    newEPrice.className = "price";
+    newEProductId.className = "product-id";
+    newDivLine.classList = "vertical-line closed open";
+
+    //// append elements to parents
+    ////// children of product-container
+    newSProductContainer.append(newSProductInfo);
+
+    ////// children of
+    newSProductInfo.append(
       newImgBottle,
       newEVar,
       newEVintageApp,
       newEPrice,
-      newESize,
-      newEAbv,
-      newEProductId
+      newIconOpen,
+      newDivMoreInfo
     );
 
-    //// add class to elements
-    newSection.className = "product-container";
+    ////// children of more-info-container
+    newDivMoreInfo.append(newDivSizeAbv, newEProductId);
 
-    //// append to parent section
-    parent.append(newSection);
+    ////// children of size-abv-container
+    newDivSizeAbv.append(newESize, newEAbv);
+
+    //// append to wines container section
+    parent.append(newSProductContainer, newDivLine);
   });
 }
 
-// TODO: ADD OPEN/CLOSE CHEVRON TO PRODUCT CONTAINER
-/* 
-<i class="fas fa-chevron-up"></i> 
-<i class="fas fa-chevron-down"></i>
-*/
+// TODO: open/close icon logic
 
 // TODO: UPDATE ELEMENTS AND CLASS NAMES, ADD DIV FOR VERTICAL LINE.
 //For each:
