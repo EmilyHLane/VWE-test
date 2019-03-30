@@ -110,3 +110,26 @@ function addWine(wine) {
     parent.append(newSection);
   });
 }
+
+// TODO: ADD OPEN/CLOSE CHEVRON TO PRODUCT CONTAINER
+/* 
+<i class="fas fa-chevron-up"></i> 
+<i class="fas fa-chevron-down"></i>
+*/
+
+// TODO: UPDATE ELEMENTS AND CLASS NAMES, ADD DIV FOR VERTICAL LINE.
+//For each:
+// div - columns
+
+// --product-container
+// ---h2 varietal
+// ---h3 vintage and appel
+// ---p - price
+
+// ---div - more info
+// ----div - size and abv
+// -----p - size
+// -----p - abv
+// ----p - prduct id
+
+// --div - line

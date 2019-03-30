@@ -1,0 +1,68 @@
+/* global styles and custom properties */
+
+/* color & font variables */
+:root {
+  --primary-light-color: #fff5d3; /* yellow-wheat */
+  --primary-dark-color: #19160a; /* coal */
+  --secondary-color: #b69e49; /* gold */
+  --accent-light-color: #822783; /* light-purple */
+  --accent-dark-color: #692569; /* dark-purple */
+
+  --primary-font-family: "Open Sans", sans-serif;
+}
+
+/* grid - global */
+.col-12 {
+  width: 100%;
+}
+
+/* text styles */
+h1,
+h2,
+h3,
+p {
+  font-family: var(--primary-font-family);
+}
+
+/* ---------- */
+
+/* medium screen styles */
+
+/* grid - laptop/desktop */
+.md-col-4 {
+  width: 32%;
+}
+.md-col-12 {
+  width: 100%;
+}
+
+/* header - md */
+
+/* main - md */
+
+/* product container - md */
+img {
+  height: 300px;
+}
+
+/* ---------- */
+
+/* small screen styles - tablet */
+/* @media screen and (max-width: 600px){} */
+/* grid - sm */
+.sm-col-6 {
+  width: 49%;
+}
+
+.sm-col-12 {
+  width: 100%;
+}
+
+/* ---------- */
+
+/* extra small screen styles - phone */
+/* @media screen and (max-width: 400px) {} */
+/* grid - xs */
+.xs-col-12 {
+  width: 100%;
+}
