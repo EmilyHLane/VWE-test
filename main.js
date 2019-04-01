@@ -129,7 +129,6 @@ function addWine(wine) {
       newEVar,
       newEVintageApp,
       newEPrice,
-      // newIcon,
       newButton,
       newDivMoreInfo
     );
