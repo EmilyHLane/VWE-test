@@ -88,7 +88,10 @@ function addWine(wine) {
     const newImgBottle = document.createElement("img");
 
     ////// font awesome icon elements with class and aria label
+    const newButton = document.createElement("button");
     const newIcon = document.createElement("i");
+    newButton.appendChild(newIcon);
+    newButton.classList = "open-close-icon";
     newIcon.classList = "fas fa-chevron-down";
     newIcon.setAttribute("aria-label", "open more information");
 
@@ -126,7 +129,8 @@ function addWine(wine) {
       newEVar,
       newEVintageApp,
       newEPrice,
-      newIcon,
+      // newIcon,
+      newButton,
       newDivMoreInfo
     );
 
@@ -141,7 +145,7 @@ function addWine(wine) {
   });
 
   // logic for open/close icons and aria-label //
-  const icons = document.querySelectorAll(".fas");
+  const icons = document.querySelectorAll(".open-close-icon");
   icons.forEach(icon => {
     icon.addEventListener("click", toggleDetails);
   });
@@ -151,11 +155,12 @@ function addWine(wine) {
     const sib = this.nextSibling;
     sib.classList.toggle("hide");
     //swap up and down chevron classes, and swap aria label
-    const el = this;
+    const el = this.childNodes[0];
+    console.log(el);
     toggleChevron(el);
   }
 
-  //NOTE: fa-chevron-up = is open; fa-chevron-down  = is closed
+  //NOTE: fa-chevron-up = is open; fa-chevron-down = is closed
   function toggleChevron(el) {
     //swap up and down chevrons,
     el.classList.toggle("fa-chevron-up");
