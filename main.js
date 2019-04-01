@@ -87,11 +87,10 @@ function addWine(wine) {
     ////// bottle image elements
     const newImgBottle = document.createElement("img");
 
-    ////// font awesome icon elements with class
-    const newIconOpen = document.createElement("i");
-    newIconOpen.classList = "fas fa-chevron-down";
-    const newIconClose = document.createElement("i");
-    newIconClose.classList = "fas fa-chevron-up";
+    ////// font awesome icon elements with class and aria label
+    const newIcon = document.createElement("i");
+    newIcon.classList = "fas fa-chevron-down";
+    newIcon.setAttribute("aria-label", "open more information");
 
     //// add text to new elements
     newEVar.appendChild(newVar);
@@ -109,7 +108,7 @@ function addWine(wine) {
     newSProductContainer.classList =
       "product-container md-col-4 sm-col-6 xs-col-12";
     newSProductInfo.className = "product-info-container";
-    newDivMoreInfo.className = "more-info-container";
+    newDivMoreInfo.classList = "more-info-container hide";
     newDivSizeAbv.className = "size-abv-container";
     newEVar.className = "varietal";
     newEVintageApp.className = "vintage-app";
@@ -127,7 +126,7 @@ function addWine(wine) {
       newEVar,
       newEVintageApp,
       newEPrice,
-      newIconOpen,
+      newIcon,
       newDivMoreInfo
     );
 
@@ -140,23 +139,37 @@ function addWine(wine) {
     //// append to wines container section
     parent.append(newSProductContainer, newDivLine);
   });
+
+  // logic for open/close icons and aria-label //
+  const icons = document.querySelectorAll(".fas");
+  icons.forEach(icon => {
+    icon.addEventListener("click", toggleDetails);
+  });
+
+  function toggleDetails() {
+    //show and hide product details
+    const sib = this.nextSibling;
+    sib.classList.toggle("hide");
+    //swap up and down chevron classes, and swap aria label
+    const el = this;
+    toggleChevron(el);
+  }
+
+  //NOTE: fa-chevron-up = is open; fa-chevron-down  = is closed
+  function toggleChevron(el) {
+    //swap up and down chevrons,
+    el.classList.toggle("fa-chevron-up");
+    el.classList.toggle("fa-chevron-down");
+
+    //and swap aria labels
+    if (el.classList.contains("fa-chevron-up")) {
+      el.getAttributeNode("aria-label").value = "close more information";
+    } else if (el.classList.contains("fa-chevron-down")) {
+      el.getAttributeNode("aria-label").value = "open more information";
+    }
+  }
+
+  //////////
+  // end  //
+  //////////
 }
-
-// TODO: open/close icon logic
-
-// TODO: UPDATE ELEMENTS AND CLASS NAMES, ADD DIV FOR VERTICAL LINE.
-//For each:
-// div - columns
-
-// --product-container
-// ---h2 varietal
-// ---h3 vintage and appel
-// ---p - price
-
-// ---div - more info
-// ----div - size and abv
-// -----p - size
-// -----p - abv
-// ----p - prduct id
-
-// --div - line

@@ -10,6 +10,11 @@
   --primary-font-family: "Open Sans", sans-serif;
 }
 
+/* hide element */
+.hide {
+  display: none;
+}
+
 /* grid - global */
 .col-12 {
   width: 100%;
@@ -204,6 +209,6 @@ h2 {
   }
 }
 
-.more-info-container {
+/* .more-info-container {
   display: none;
-}
+} */
