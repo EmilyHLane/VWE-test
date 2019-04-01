@@ -70,10 +70,16 @@ p.price {
   font-size: 2em;
 }
 
+/* button wrapping open/close icons */
+.open-close-icon {
+  border: none;
+  background: none;
+}
+
 /* ---------- */
 /* ---------- */
 
-/* MEDIUM SCREEN STYLES */
+/* BASE - MEDIUM SCREEN - STYLES */
 
 /* grid - laptop/desktop */
 .md-col-4 {
@@ -139,7 +145,7 @@ h2 {
 
 /* product details */
 .more-info-container {
-  width: 40%;
+  width: 180px;
   margin: 4% auto 0;
 }
 
