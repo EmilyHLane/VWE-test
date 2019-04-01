@@ -117,7 +117,7 @@ function addWine(wine) {
     newEVintageApp.className = "vintage-app";
     newEPrice.className = "price";
     newEProductId.className = "product-id";
-    newDivLine.classList = "vertical-line closed open";
+    newDivLine.className = "vertical-line";
 
     //// append elements to parents
     ////// children of product-container
@@ -156,7 +156,6 @@ function addWine(wine) {
     sib.classList.toggle("hide");
     //swap up and down chevron classes, and swap aria label
     const el = this.childNodes[0];
-    console.log(el);
     toggleChevron(el);
   }
 
