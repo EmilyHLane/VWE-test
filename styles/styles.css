@@ -6,7 +6,6 @@
   --primary-dark-color: #19160a; /* coal */
   --secondary-color: #b69e49; /* gold */
   --accent-light-color: #822783; /* light-purple */
-  /* --accent-dark-color: #692569; dark-purple */
   --primary-font-family: "Open Sans", sans-serif;
 }
 
@@ -69,7 +68,6 @@ p.price {
 .fa-chevron-down {
   color: var(--accent-light-color);
   font-size: 2em;
-  /* margin-bottom: 8%; */
 }
 
 /* ---------- */
@@ -100,7 +98,6 @@ h1 {
 .wines-container {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
   margin: 5% 2%;
 }
 
@@ -140,6 +137,23 @@ h2 {
   display: none;
 }
 
+/* product details */
+.more-info-container {
+  width: 40%;
+  margin: 4% auto 0;
+}
+
+.size-abv-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-id {
+  text-align: left;
+  margin-top: 15px;
+  font-size: 1em;
+}
+
 /* ---------- */
 /* ---------- */
 
@@ -163,10 +177,6 @@ h2 {
   .vertical-line:nth-of-type(even) {
     display: none;
   }
-
-  /* .sm-col-12 {
-    width: 99%;
-  } */
 }
 
 /* ---------- */
@@ -208,7 +218,3 @@ h2 {
     display: block;
   }
 }
-
-/* .more-info-container {
-  display: none;
-} */
